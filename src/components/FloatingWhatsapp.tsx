@@ -3,7 +3,7 @@
 import { trackMetaEvent, trackMetaCustomEvent } from "@/src/lib/metaPixel";
 
 export default function FloatingWhatsapp() {
-  const numero = "55SEUNUMEROAQUI";
+  const whatsappUrl = "https://api.whatsapp.com/send/?phone=5588981495878&text=Oii,+vim+do+site,+quero+concluir+por+aqui+mesmo!&app_absent=0";
 
   const clicarWhatsapp = () => {
     trackMetaEvent("Contact", {
@@ -15,7 +15,7 @@ export default function FloatingWhatsapp() {
 
   return (
     <a
-      href={`https://wa.me/${numero}`}
+      href={whatsappUrl}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
