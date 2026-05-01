@@ -1,11 +1,11 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { META_PIXEL_ID, trackMetaEvent, trackMetaCustomEvent } from "@/src/lib/metaPixel";
 
-export default function MetaPixel() {
+function MetaPixelTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -28,6 +28,10 @@ export default function MetaPixel() {
     };
   }, []);
 
+  return null;
+}
+
+export default function MetaPixel() {
   return (
     <>
       <Script id="meta-pixel" strategy="afterInteractive">
@@ -54,6 +58,10 @@ export default function MetaPixel() {
           alt=""
         />
       </noscript>
+
+      <Suspense fallback={null}>
+        <MetaPixelTracker />
+      </Suspense>
     </>
   );
 }
