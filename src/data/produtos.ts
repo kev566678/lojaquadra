@@ -31,7 +31,7 @@ export const produtos: Produto[] = [
       {
         id: "dreamers",
         nome: "Dreamers",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/dreamers/nikeairzoomgtcut3dreamers1.png",
           "/produtos/nikeairzoomgtcut3/dreamers/nikeairzoomgtcut3dreamers2.png",
@@ -42,7 +42,7 @@ export const produtos: Produto[] = [
       {
         id: "punch",
         nome: "Punch",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/punch/nikeairzoomgtcut3punch1.png",
           "/produtos/nikeairzoomgtcut3/punch/nikeairzoomgtcut3punch2.png",
@@ -53,7 +53,7 @@ export const produtos: Produto[] = [
       {
         id: "shinetogether",
         nome: "Shine Together",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/shinetogether/nikeairzoomgtcut3shinetogether1.png",
           "/produtos/nikeairzoomgtcut3/shinetogether/nikeairzoomgtcut3shinetogether2.png",
@@ -64,7 +64,7 @@ export const produtos: Produto[] = [
       {
         id: "smokegray",
         nome: "Smoke Gray",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/smokegray/nikeairzoomgtcut3smokegray1.png",
           "/produtos/nikeairzoomgtcut3/smokegray/nikeairzoomgtcut3smokegray2.png",
@@ -75,7 +75,7 @@ export const produtos: Produto[] = [
       {
         id: "swooshsquad",
         nome: "Swoosh Squad",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/swooshsquad/nikeairzoomgtcut3swooshsquad1.png",
           "/produtos/nikeairzoomgtcut3/swooshsquad/nikeairzoomgtcut3swooshsquad2.png",
@@ -86,7 +86,7 @@ export const produtos: Produto[] = [
       {
         id: "washedcoral",
         nome: "Washed Coral",
-        preco: 849.99,
+        preco: 947,
         imagens: [
           "/produtos/nikeairzoomgtcut3/washedcoral/nikeairzoomgtcut3washedcoral1.png",
           "/produtos/nikeairzoomgtcut3/washedcoral/nikeairzoomgtcut3washedcoral2.png",
@@ -106,7 +106,7 @@ export const produtos: Produto[] = [
       {
         id: "blackmetallicgold",
         nome: "Black Metallic Gold",
-        preco: 899.9,
+        preco: 893,
         imagens: [
           "/produtos/nikeajawilsonaone/blackmetallicgold/nikeajawilsonaoneblackmetallicgold1.png",
           "/produtos/nikeajawilsonaone/blackmetallicgold/nikeajawilsonaoneblackmetallicgold2.png",
@@ -117,7 +117,7 @@ export const produtos: Produto[] = [
       {
         id: "pinkaura",
         nome: "Pink Aura",
-        preco: 899.9,
+        preco: 893,
         imagens: [
           "/produtos/nikeajawilsonaone/pinkaura/nikeajawilsonaonepinkaura1.png",
           "/produtos/nikeajawilsonaone/pinkaura/nikeajawilsonaonepinkaura2.png",
@@ -128,7 +128,7 @@ export const produtos: Produto[] = [
       {
         id: "unapologeticfierce",
         nome: "Unapologetic Fierce",
-        preco: 899.9,
+        preco: 893,
         imagens: [
           "/produtos/nikeajawilsonaone/unapologeticfierce/nikeajawilsonaoneunapologeticfierce1.png",
           "/produtos/nikeajawilsonaone/unapologeticfierce/nikeajawilsonaoneunapologeticfierce2.png",
@@ -148,7 +148,7 @@ export const produtos: Produto[] = [
       {
         id: "courtpurple",
         nome: "Court Purple",
-        preco: 999.9,
+        preco: 948,
         imagens: [
           "/produtos/nikefreak7/courtpurple/nikefreak7courtpurple1.png",
           "/produtos/nikefreak7/courtpurple/nikefreak7courtpurple2.png",
@@ -159,7 +159,7 @@ export const produtos: Produto[] = [
       {
         id: "pinksiclefireberry",
         nome: "Pinksicle Fireberry",
-        preco: 999.9,
+        preco: 948,
         imagens: [
           "/produtos/nikefreak7/pinksiclefireberry/nikefreak7pinksiclefireberry1.png",
           "/produtos/nikefreak7/pinksiclefireberry/nikefreak7pinksiclefireberry2.png",
@@ -170,7 +170,7 @@ export const produtos: Produto[] = [
       {
         id: "solarred",
         nome: "Solar Red",
-        preco: 999.9,
+        preco: 948,
         imagens: [
           "/produtos/nikefreak7/solarred/nikefreak7solarred1.png",
           "/produtos/nikefreak7/solarred/nikefreak7solarred2.png",
@@ -181,7 +181,7 @@ export const produtos: Produto[] = [
       {
         id: "totalorange",
         nome: "Total Orange",
-        preco: 999.9,
+        preco: 948,
         imagens: [
           "/produtos/nikefreak7/totalorange/nikefreak7totalorange1.png",
           "/produtos/nikefreak7/totalorange/nikefreak7totalorange2.png",
@@ -201,7 +201,7 @@ export const produtos: Produto[] = [
       {
         id: "channel12",
         nome: "Channel 12",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikeja3/channel12/nikeja3channel121.png",
           "/produtos/nikeja3/channel12/nikeja3channel122.png",
@@ -212,7 +212,7 @@ export const produtos: Produto[] = [
       {
         id: "priceofadmission",
         nome: "Price of Admission",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikeja3/priceofadmission/nikeja3priceofadmission1.png",
           "/produtos/nikeja3/priceofadmission/nikeja3priceofadmission2.png",
@@ -223,7 +223,7 @@ export const produtos: Produto[] = [
       {
         id: "zombie",
         nome: "Zombie",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikeja3/zombie/nikeja3zombie1.png",
           "/produtos/nikeja3/zombie/nikeja3zombie2.png",
@@ -243,7 +243,7 @@ export const produtos: Produto[] = [
       {
         id: "eggplant",
         nome: "Eggplant",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikekd18/eggplant/nikekd18eggplant1.png",
           "/produtos/nikekd18/eggplant/nikekd18eggplant2.png",
@@ -254,7 +254,7 @@ export const produtos: Produto[] = [
       {
         id: "smartcity",
         nome: "Smart City",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikekd18/smartcity/nikekd18smartcity1.png",
           "/produtos/nikekd18/smartcity/nikekd18smartcity2.png",
@@ -265,7 +265,7 @@ export const produtos: Produto[] = [
       {
         id: "softpearl",
         nome: "Soft Pearl",
-        preco: 899.9,
+        preco: 948,
         imagens: [
           "/produtos/nikekd18/softpearl/nikekd18softpearl1.png",
           "/produtos/nikekd18/softpearl/nikekd18softpearl2.png",
@@ -285,7 +285,7 @@ export const produtos: Produto[] = [
       {
         id: "lulamolusco",
         nome: "Lula Molusco",
-        preco: 909,
+        preco: 948,
         imagens: [
           "/produtos/nikekyrie5spongebob/lulamolusco/nikekyrie5spongeboblulamolusco1.png",
           "/produtos/nikekyrie5spongebob/lulamolusco/nikekyrie5spongeboblulamolusco2.png",
@@ -296,7 +296,7 @@ export const produtos: Produto[] = [
       {
         id: "patrick",
         nome: "Patrick",
-        preco: 909,
+        preco: 948,
         imagens: [
           "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick1.webp",
           "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick2.webp",
@@ -307,7 +307,7 @@ export const produtos: Produto[] = [
       {
         id: "pinapplehouse",
         nome: "Pineapple House",
-        preco: 909,
+        preco: 948,
         imagens: [
           "/produtos/nikekyrie5spongebob/pinapplehouse/nikekyrie5spongebobpinapplehouse1.png",
           "/produtos/nikekyrie5spongebob/pinapplehouse/nikekyrie5spongebobpinapplehouse2.png",
@@ -318,7 +318,7 @@ export const produtos: Produto[] = [
       {
         id: "squarepantes",
         nome: "SquarePants",
-        preco: 909,
+        preco: 948,
         imagens: [
           "/produtos/nikekyrie5spongebob/squarepantes/nikekyrie5spongebobsquarepantes1.png",
           "/produtos/nikekyrie5spongebob/squarepantes/nikekyrie5spongebobsquarepantes2.png",
@@ -338,7 +338,7 @@ export const produtos: Produto[] = [
       {
         id: "armorynavy",
         nome: "Armory Navy",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikelebronwitness8/armorynavy/nikelebronwitness8armorynavy1.png",
           "/produtos/nikelebronwitness8/armorynavy/nikelebronwitness8armorynavy2.png",
@@ -349,7 +349,7 @@ export const produtos: Produto[] = [
       {
         id: "fazeclanbred",
         nome: "FaZe Clan Bred",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikelebronwitness8/fazeclanbred/nikelebronwitness8fazeclanbred1.png",
           "/produtos/nikelebronwitness8/fazeclanbred/nikelebronwitness8fazeclanbred2.png",
@@ -360,7 +360,7 @@ export const produtos: Produto[] = [
       {
         id: "ipromiseschool",
         nome: "I Promise School",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikelebronwitness8/ipromiseschool/nikelebronwitness8ipromiseschool1.png",
           "/produtos/nikelebronwitness8/ipromiseschool/nikelebronwitness8ipromiseschool2.png",
@@ -371,7 +371,7 @@ export const produtos: Produto[] = [
       {
         id: "lightcrimson",
         nome: "Light Crimson",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikelebronwitness8/lightcrimson/nikelebronwitness8lightcrimson1.png",
           "/produtos/nikelebronwitness8/lightcrimson/nikelebronwitness8lightcrimson2.png",
@@ -391,7 +391,7 @@ export const produtos: Produto[] = [
       {
         id: "blackhypercrimson",
         nome: "Black Hyper Crimson",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikemind002/blackhypercrimson/nikemind002blackhypercrimson1.png",
           "/produtos/nikemind002/blackhypercrimson/nikemind002blackhypercrimson2.png",
@@ -402,7 +402,7 @@ export const produtos: Produto[] = [
       {
         id: "lightsmoke",
         nome: "Light Smoke",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikemind002/lightsmoke/nikemind002lightsmoke1.png",
           "/produtos/nikemind002/lightsmoke/nikemind002lightsmoke2.png",
@@ -413,7 +413,7 @@ export const produtos: Produto[] = [
       {
         id: "sailwhite",
         nome: "Sail White",
-        preco: 799,
+        preco: 948,
         imagens: [
           "/produtos/nikemind002/sailwhite/nikemind002sailwhite1.png",
           "/produtos/nikemind002/sailwhite/nikemind002sailwhite2.png",
@@ -433,7 +433,7 @@ export const produtos: Produto[] = [
       {
         id: "byyou",
         nome: "By You",
-        preco: 839,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina2/byyou/nikesabrina2byyou1.png",
           "/produtos/nikesabrina2/byyou/nikesabrina2byyou2.png",
@@ -444,7 +444,7 @@ export const produtos: Produto[] = [
       {
         id: "midnightnavy",
         nome: "Midnight Navy",
-        preco: 839,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina2/midnightnavy/nikesabrina2midnightnavy1.png",
           "/produtos/nikesabrina2/midnightnavy/nikesabrina2midnightnavy2.png",
@@ -455,7 +455,7 @@ export const produtos: Produto[] = [
       {
         id: "tbp",
         nome: "TBP",
-        preco: 839,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina2/tbp/nikesabrina2tbp1.png",
           "/produtos/nikesabrina2/tbp/nikesabrina2tbp2.png",
@@ -475,7 +475,7 @@ export const produtos: Produto[] = [
       {
         id: "allstar",
         nome: "All Star",
-        preco: 889,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina3/allstar/nikesabrina3allstar1.png",
           "/produtos/nikesabrina3/allstar/nikesabrina3allstar2.png",
@@ -486,7 +486,7 @@ export const produtos: Produto[] = [
       {
         id: "claygreen",
         nome: "Clay Green",
-        preco: 889,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina3/claygreen/nikesabrina3claygreen1.png",
           "/produtos/nikesabrina3/claygreen/nikesabrina3claygreen2.png",
@@ -497,7 +497,7 @@ export const produtos: Produto[] = [
       {
         id: "gamer",
         nome: "Gamer",
-        preco: 889,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina3/gamer/nikesabrina3gamer1.png",
           "/produtos/nikesabrina3/gamer/nikesabrina3gamer2.png",
@@ -508,7 +508,7 @@ export const produtos: Produto[] = [
       {
         id: "nby",
         nome: "NBY",
-        preco: 889,
+        preco: 948,
         imagens: [
           "/produtos/nikesabrina3/nby/nikesabrina3nby1.png",
           "/produtos/nikesabrina3/nby/nikesabrina3nby2.png",
@@ -528,7 +528,7 @@ export const produtos: Produto[] = [
       {
         id: "halloween",
         nome: "Halloween",
-        preco: 829,
+        preco: 948,
         imagens: [
           "/produtos/pumalamelomb04/halloween/pumalamelomb04halloween1.png",
           "/produtos/pumalamelomb04/halloween/pumalamelomb04halloween2.png",
@@ -539,7 +539,7 @@ export const produtos: Produto[] = [
       {
         id: "1d1",
         nome: "1D1",
-        preco: 829,
+        preco: 948,
         imagens: [
           "/produtos/pumalamelomb04/1d1/pumalamelomb041d11.png",
           "/produtos/pumalamelomb04/1d1/pumalamelomb041d12.png",
@@ -559,7 +559,7 @@ export const produtos: Produto[] = [
       {
         id: "chinesenewyear",
         nome: "Chinese New Year",
-        preco: 849,
+        preco: 948,
         imagens: [
           "/produtos/underarmourcurry8/chinesenewyear/underarmourcurry8chinesenewyear1.png",
           "/produtos/underarmourcurry8/chinesenewyear/underarmourcurry8chinesenewyear2.png",
@@ -570,7 +570,7 @@ export const produtos: Produto[] = [
       {
         id: "shineflow",
         nome: "Shine Flow",
-        preco: 849,
+        preco: 948,
         imagens: [
           "/produtos/underarmourcurry8/shineflow/underarmourcurry8shineflow1.png",
           "/produtos/underarmourcurry8/shineflow/underarmourcurry8shineflow2.png",
@@ -581,7 +581,7 @@ export const produtos: Produto[] = [
       {
         id: "zenflow",
         nome: "Zen Flow",
-        preco: 849,
+        preco: 948,
         imagens: [
           "/produtos/underarmourcurry8/zenflow/underarmourcurry8zenflow1.png",
           "/produtos/underarmourcurry8/zenflow/underarmourcurry8zenflow2.png",
