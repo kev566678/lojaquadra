@@ -14,6 +14,7 @@ export default function CarrinhoPage() {
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const carrinho: CartItem[] = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
     setItems(carrinho);
 
