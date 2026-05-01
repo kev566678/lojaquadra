@@ -24,7 +24,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikeairzoomgtcut3",
     nome: "Nike Air Zoom GT Cut 3",
-    thumbnail: "/layout/thumbnails/nikeairzoomgtcut3.webp",
+    thumbnail: "/layout/thumbnails/nikeairzoomgtcut3.png",
     descricao:
       "Resposta rápida, tração agressiva e leveza para quem joga em alta velocidade.",
     colorways: [
@@ -99,7 +99,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikeajawilsonaone",
     nome: "Nike A'ja Wilson A'One",
-    thumbnail: "/layout/thumbnails/nikeajawilsonaone.webp",
+    thumbnail: "/layout/thumbnails/nikeajawilsonaone.png",
     descricao:
       "Estabilidade, conforto e presença para quem domina a quadra com força e controle.",
     colorways: [
@@ -141,7 +141,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikefreak7",
     nome: "Nike Freak 7",
-    thumbnail: "/layout/thumbnails/nikefreak7.webp",
+    thumbnail: "/layout/thumbnails/nikefreak7.png",
     descricao:
       "Explosão, estabilidade e presença para quem joga forte dos dois lados da quadra.",
     colorways: [
@@ -194,7 +194,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikeja3",
     nome: "Nike Ja 3",
-    thumbnail: "/layout/thumbnails/nikeja3.webp",
+    thumbnail: "/layout/thumbnails/nikeja3.png",
     descricao:
       "Leve, agressivo e pronto para mudança de direção rápida e infiltração sem medo.",
     colorways: [
@@ -236,7 +236,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikekd18",
     nome: "Nike KD 18",
-    thumbnail: "/layout/thumbnails/nikekd18.webp",
+    thumbnail: "/layout/thumbnails/nikekd18.png",
     descricao:
       "Conforto, resposta e fluidez para quem gosta de jogar liso e pontuar de qualquer lugar.",
     colorways: [
@@ -278,7 +278,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikekyrie5spongebob",
     nome: "Nike Kyrie 5 SpongeBob",
-    thumbnail: "/layout/thumbnails/nikekyrie5spongebob.webp",
+    thumbnail: "/layout/thumbnails/nikekyrie5spongebob.png",
     descricao:
       "Controle, tração e personalidade para quem quer jogar diferente e chamar atenção na quadra.",
     colorways: [
@@ -331,7 +331,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikelebronwitness8",
     nome: "Nike LeBron Witness 8",
-    thumbnail: "/layout/thumbnails/nikelebronwitness8.webp",
+    thumbnail: "/layout/thumbnails/nikelebronwitness8.png",
     descricao:
       "Amortecimento, suporte e força para quem joga pesado e precisa de confiança em cada passada.",
     colorways: [
@@ -384,7 +384,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikemind002",
     nome: "Nike Mind 002",
-    thumbnail: "/layout/thumbnails/nikemind002.webp",
+    thumbnail: "/layout/thumbnails/nikemind002.png",
     descricao:
       "Modelo com visual futurista e pegada diferenciada para quem gosta de presença fora do comum.",
     colorways: [
@@ -426,7 +426,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikesabrina2",
     nome: "Nike Sabrina 2",
-    thumbnail: "/layout/thumbnails/nikesabrina2.webp",
+    thumbnail: "/layout/thumbnails/nikesabrina2.png",
     descricao:
       "Leve, responsivo e firme para quem joga com velocidade e controle.",
     colorways: [
@@ -468,7 +468,7 @@ export const produtos: Produto[] = [
   {
     slug: "nikesabrina3",
     nome: "Nike Sabrina 3",
-    thumbnail: "/layout/thumbnails/nikesabrina3.webp",
+    thumbnail: "/layout/thumbnails/nikesabrina3.png",
     descricao:
       "Suporte, leveza e resposta para cortes rápidos e arremessos em movimento.",
     colorways: [
@@ -521,7 +521,7 @@ export const produtos: Produto[] = [
   {
     slug: "pumalamelomb04",
     nome: "Puma LaMelo MB.04",
-    thumbnail: "/layout/thumbnails/pumalamelomb04.webp",
+    thumbnail: "/layout/thumbnails/pumalamelomb04.png",
     descricao:
       "Visual forte e pegada moderna para quem quer conforto e presença em cada posse.",
     colorways: [
@@ -552,7 +552,7 @@ export const produtos: Produto[] = [
   {
     slug: "underarmourcurry8",
     nome: "Under Armour Curry 8",
-    thumbnail: "/layout/thumbnails/underarmourcurry8.webp",
+    thumbnail: "/layout/thumbnails/underarmourcurry8.png",
     descricao:
       "Leveza, encaixe e resposta rápida para quem vive de movimentação, leitura e arremesso.",
     colorways: [
