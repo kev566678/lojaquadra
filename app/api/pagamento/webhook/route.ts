@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const WEBHOOK_SECRET = process.env.PROMISSE_WEBHOOK_SECRET;
 
 async function notificarTelegram(mensagem: string) {
   if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) return;
@@ -19,12 +20,21 @@ async function notificarTelegram(mensagem: string) {
 
 export async function POST(req: Request) {
   try {
+    const secretHeader =
+      req.headers.get("x-webhook-secret") ||
+      req.headers.get("x-promisse-secret") ||
+      req.headers.get("authorization");
+
+    if (WEBHOOK_SECRET && secretHeader !== WEBHOOK_SECRET) {
+      console.warn("Webhook bloqueado — secret inválido.");
+      return NextResponse.json({ ok: false }, { status: 401 });
+    }
+
     const body = await req.json();
 
     const evento = body?.event ?? body?.type ?? "";
     const transacao = body?.data ?? body?.transaction ?? body ?? {};
 
-    // Só notifica se o pagamento foi aprovado
     if (evento !== "payment.approved") {
       return NextResponse.json({ ok: true, ignorado: true });
     }
