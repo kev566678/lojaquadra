@@ -298,9 +298,9 @@ export const produtos: Produto[] = [
         nome: "Patrick",
         preco: 1499.9,
         imagens: [
-          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick1.png",
-          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick2.png",
-          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick3.png",
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick1.webp",
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick2.webp",
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick3.webp",
         ],
         tamanhosDisponiveis: todosOsTamanhos,
       },
