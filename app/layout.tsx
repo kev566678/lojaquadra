@@ -1,25 +1,594 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import MetaPixel from "@/src/components/MetaPixel";
-import FloatingWhatsapp from "@/src/components/FloatingWhatsapp";
-
-export const metadata: Metadata = {
-  title: "QUADRAKING STORE",
-  description: "Loja de tênis de basquete com pagamento via PIX",
+export type Colorway = {
+  id: string;
+  nome: string;
+  preco: number;
+  imagens: string[];
+  tamanhosDisponiveis: number[];
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <MetaPixel />
-        {children}
-        <FloatingWhatsapp />
-      </body>
-    </html>
-  );
-}
+export type Produto = {
+  slug: string;
+  nome: string;
+  thumbnail: string; // movido do mapa hardcoded nas pages
+  descricao: string;
+  colorways: Colorway[];
+};
+
+export const TAMANHOS_EXIBIDOS = [
+  34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
+];
+
+const todosOsTamanhos = [...TAMANHOS_EXIBIDOS];
+
+export const produtos: Produto[] = [
+  {
+    slug: "nikeairzoomgtcut3",
+    nome: "Nike Air Zoom GT Cut 3",
+    thumbnail: "/layout/thumbnails/nikeairzoomgtcut3.png",
+    descricao:
+      "Resposta rápida, tração agressiva e leveza para quem joga em alta velocidade.",
+    colorways: [
+      {
+        id: "dreamers",
+        nome: "Dreamers",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/dreamers/nikeairzoomgtcut3dreamers1.webp",
+          "/produtos/nikeairzoomgtcut3/dreamers/nikeairzoomgtcut3dreamers2.webp",
+          "/produtos/nikeairzoomgtcut3/dreamers/nikeairzoomgtcut3dreamers3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "punch",
+        nome: "Punch",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/punch/nikeairzoomgtcut3punch1.webp",
+          "/produtos/nikeairzoomgtcut3/punch/nikeairzoomgtcut3punch2.webp",
+          "/produtos/nikeairzoomgtcut3/punch/nikeairzoomgtcut3punch3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "shinetogether",
+        nome: "Shine Together",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/shinetogether/nikeairzoomgtcut3shinetogether1.webp",
+          "/produtos/nikeairzoomgtcut3/shinetogether/nikeairzoomgtcut3shinetogether2.webp",
+          "/produtos/nikeairzoomgtcut3/shinetogether/nikeairzoomgtcut3shinetogether3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "smokegray",
+        nome: "Smoke Gray",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/smokegray/nikeairzoomgtcut3smokegray1.webp",
+          "/produtos/nikeairzoomgtcut3/smokegray/nikeairzoomgtcut3smokegray2.webp",
+          "/produtos/nikeairzoomgtcut3/smokegray/nikeairzoomgtcut3smokegray3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "swooshsquad",
+        nome: "Swoosh Squad",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/swooshsquad/nikeairzoomgtcut3swooshsquad1.webp",
+          "/produtos/nikeairzoomgtcut3/swooshsquad/nikeairzoomgtcut3swooshsquad2.webp",
+          "/produtos/nikeairzoomgtcut3/swooshsquad/nikeairzoomgtcut3swooshsquad3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "washedcoral",
+        nome: "Washed Coral",
+        preco: 947,
+        imagens: [
+          "/produtos/nikeairzoomgtcut3/washedcoral/nikeairzoomgtcut3washedcoral1.webp",
+          "/produtos/nikeairzoomgtcut3/washedcoral/nikeairzoomgtcut3washedcoral2.webp",
+          "/produtos/nikeairzoomgtcut3/washedcoral/nikeairzoomgtcut3washedcoral3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikeajawilsonaone",
+    nome: "Nike A'ja Wilson A'One",
+    thumbnail: "/layout/thumbnails/nikeajawilsonaone.png",
+    descricao:
+      "Estabilidade, conforto e presença para quem domina a quadra com força e controle.",
+    colorways: [
+      {
+        id: "blackmetallicgold",
+        nome: "Black Metallic Gold",
+        preco: 893,
+        imagens: [
+          "/produtos/nikeajawilsonaone/blackmetallicgold/nikeajawilsonaoneblackmetallicgold1.webp",
+          "/produtos/nikeajawilsonaone/blackmetallicgold/nikeajawilsonaoneblackmetallicgold2.webp",
+          "/produtos/nikeajawilsonaone/blackmetallicgold/nikeajawilsonaoneblackmetallicgold3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "pinkaura",
+        nome: "Pink Aura",
+        preco: 893,
+        imagens: [
+          "/produtos/nikeajawilsonaone/pinkaura/nikeajawilsonaonepinkaura1.webp",
+          "/produtos/nikeajawilsonaone/pinkaura/nikeajawilsonaonepinkaura2.webp",
+          "/produtos/nikeajawilsonaone/pinkaura/nikeajawilsonaonepinkaura3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "unapologeticfierce",
+        nome: "Unapologetic Fierce",
+        preco: 893,
+        imagens: [
+          "/produtos/nikeajawilsonaone/unapologeticfierce/nikeajawilsonaoneunapologeticfierce1.webp",
+          "/produtos/nikeajawilsonaone/unapologeticfierce/nikeajawilsonaoneunapologeticfierce2.webp",
+          "/produtos/nikeajawilsonaone/unapologeticfierce/nikeajawilsonaoneunapologeticfierce3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikefreak7",
+    nome: "Nike Freak 7",
+    thumbnail: "/layout/thumbnails/nikefreak7.png",
+    descricao:
+      "Explosão, estabilidade e presença para quem joga forte dos dois lados da quadra.",
+    colorways: [
+      {
+        id: "courtpurple",
+        nome: "Court Purple",
+        preco: 948,
+        imagens: [
+          "/produtos/nikefreak7/courtpurple/nikefreak7courtpurple1.webp",
+          "/produtos/nikefreak7/courtpurple/nikefreak7courtpurple2.webp",
+          "/produtos/nikefreak7/courtpurple/nikefreak7courtpurple3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "pinksiclefireberry",
+        nome: "Pinksicle Fireberry",
+        preco: 948,
+        imagens: [
+          "/produtos/nikefreak7/pinksiclefireberry/nikefreak7pinksiclefireberry1.webp",
+          "/produtos/nikefreak7/pinksiclefireberry/nikefreak7pinksiclefireberry2.webp",
+          "/produtos/nikefreak7/pinksiclefireberry/nikefreakpinksiclefireberry3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "solarred",
+        nome: "Solar Red",
+        preco: 948,
+        imagens: [
+          "/produtos/nikefreak7/solarred/nikefreak7solarred1.webp",
+          "/produtos/nikefreak7/solarred/nikefreak7solarred2.webp",
+          "/produtos/nikefreak7/solarred/nikefreak7solarred3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "totalorange",
+        nome: "Total Orange",
+        preco: 948,
+        imagens: [
+          "/produtos/nikefreak7/totalorange/nikefreak7totalorange1.webp",
+          "/produtos/nikefreak7/totalorange/nikefreak7totalorange2.webp",
+          "/produtos/nikefreak7/totalorange/nikefreak7totalorange3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikeja3",
+    nome: "Nike Ja 3",
+    thumbnail: "/layout/thumbnails/nikeja3.png",
+    descricao:
+      "Leve, agressivo e pronto para mudança de direção rápida e infiltração sem medo.",
+    colorways: [
+      {
+        id: "channel12",
+        nome: "Channel 12",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikeja3/channel12/nikeja3channel121.webp",
+          "/produtos/nikeja3/channel12/nikeja3channel122.webp",
+          "/produtos/nikeja3/channel12/nikeja3channel123.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "priceofadmission",
+        nome: "Price of Admission",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikeja3/priceofadmission/nikeja3priceofadmission1.webp",
+          "/produtos/nikeja3/priceofadmission/nikeja3priceofadmission2.webp",
+          "/produtos/nikeja3/priceofadmission/nikeja3priceofadmission3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "zombie",
+        nome: "Zombie",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikeja3/zombie/nikeja3zombie1.webp",
+          "/produtos/nikeja3/zombie/nikeja3zombie2.webp",
+          "/produtos/nikeja3/zombie/nikeja3zombie3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikekd18",
+    nome: "Nike KD 18",
+    thumbnail: "/layout/thumbnails/nikekd18.png",
+    descricao:
+      "Conforto, resposta e fluidez para quem gosta de jogar liso e pontuar de qualquer lugar.",
+    colorways: [
+      {
+        id: "eggplant",
+        nome: "Eggplant",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikekd18/eggplant/nikekd18eggplant1.webp",
+          "/produtos/nikekd18/eggplant/nikekd18eggplant2.webp",
+          "/produtos/nikekd18/eggplant/nikekd18eggplant3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "smartcity",
+        nome: "Smart City",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikekd18/smartcity/nikekd18smartcity1.webp",
+          "/produtos/nikekd18/smartcity/nikekd18smartcity2.webp",
+          "/produtos/nikekd18/smartcity/nikekd18smartcity3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "softpearl",
+        nome: "Soft Pearl",
+        preco: 899.9,
+        imagens: [
+          "/produtos/nikekd18/softpearl/nikekd18softpearl1.webp",
+          "/produtos/nikekd18/softpearl/nikekd18softpearl2.webp",
+          "/produtos/nikekd18/softpearl/nikekd18softpearl3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikekyrie5spongebob",
+    nome: "Nike Kyrie 5 SpongeBob",
+    thumbnail: "/layout/thumbnails/nikekyrie5spongebob.png",
+    descricao:
+      "Controle, tração e personalidade para quem quer jogar diferente e chamar atenção na quadra.",
+    colorways: [
+      {
+        id: "lulamolusco",
+        nome: "Lula Molusco",
+        preco: 909,
+        imagens: [
+          "/produtos/nikekyrie5spongebob/lulamolusco/nikekyrie5spongeboblulamolusco1.webp",
+          "/produtos/nikekyrie5spongebob/lulamolusco/nikekyrie5spongeboblulamolusco2.webp",
+          "/produtos/nikekyrie5spongebob/lulamolusco/nikekyrie5spongeboblulamolusco3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "patrick",
+        nome: "Patrick",
+        preco: 909,
+        imagens: [
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick1.webp",
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick2.webp",
+          "/produtos/nikekyrie5spongebob/patrick/nikekyrie5spongebobpatrick3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "pinapplehouse",
+        nome: "Pineapple House",
+        preco: 909,
+        imagens: [
+          "/produtos/nikekyrie5spongebob/pinapplehouse/nikekyrie5spongebobpinapplehouse1.webp",
+          "/produtos/nikekyrie5spongebob/pinapplehouse/nikekyrie5spongebobpinapplehouse2.webp",
+          "/produtos/nikekyrie5spongebob/pinapplehouse/nikekyrie5spongebobpinapplehouse3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "squarepantes",
+        nome: "SquarePants",
+        preco: 909,
+        imagens: [
+          "/produtos/nikekyrie5spongebob/squarepantes/nikekyrie5spongebobsquarepantes1.webp",
+          "/produtos/nikekyrie5spongebob/squarepantes/nikekyrie5spongebobsquarepantes2.webp",
+          "/produtos/nikekyrie5spongebob/squarepantes/nikekyrie5spongebobsquarepantes3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikelebronwitness8",
+    nome: "Nike LeBron Witness 8",
+    thumbnail: "/layout/thumbnails/nikelebronwitness8.png",
+    descricao:
+      "Amortecimento, suporte e força para quem joga pesado e precisa de confiança em cada passada.",
+    colorways: [
+      {
+        id: "armorynavy",
+        nome: "Armory Navy",
+        preco: 799,
+        imagens: [
+          "/produtos/nikelebronwitness8/armorynavy/nikelebronwitness8armorynavy1.webp",
+          "/produtos/nikelebronwitness8/armorynavy/nikelebronwitness8armorynavy2.webp",
+          "/produtos/nikelebronwitness8/armorynavy/nikelebronwitness8armorynavy3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "fazeclanbred",
+        nome: "FaZe Clan Bred",
+        preco: 799,
+        imagens: [
+          "/produtos/nikelebronwitness8/fazeclanbred/nikelebronwitness8fazeclanbred1.webp",
+          "/produtos/nikelebronwitness8/fazeclanbred/nikelebronwitness8fazeclanbred2.webp",
+          "/produtos/nikelebronwitness8/fazeclanbred/nikelebronwitness8fazeclanbred3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "ipromiseschool",
+        nome: "I Promise School",
+        preco: 799,
+        imagens: [
+          "/produtos/nikelebronwitness8/ipromiseschool/nikelebronwitness8ipromiseschool1.webp",
+          "/produtos/nikelebronwitness8/ipromiseschool/nikelebronwitness8ipromiseschool2.webp",
+          "/produtos/nikelebronwitness8/ipromiseschool/nikelebronwitness8ipromiseschool3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "lightcrimson",
+        nome: "Light Crimson",
+        preco: 799,
+        imagens: [
+          "/produtos/nikelebronwitness8/lightcrimson/nikelebronwitness8lightcrimson1.webp",
+          "/produtos/nikelebronwitness8/lightcrimson/nikelebronwitness8lightcrimson2.webp",
+          "/produtos/nikelebronwitness8/lightcrimson/nikelebronwitness8lightcrimson3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikemind002",
+    nome: "Nike Mind 002",
+    thumbnail: "/layout/thumbnails/nikemind002.png",
+    descricao:
+      "Modelo com visual futurista e pegada diferenciada para quem gosta de presença fora do comum.",
+    colorways: [
+      {
+        id: "blackhypercrimson",
+        nome: "Black Hyper Crimson",
+        preco: 799,
+        imagens: [
+          "/produtos/nikemind002/blackhypercrimson/nikemind002blackhypercrimson1.webp",
+          "/produtos/nikemind002/blackhypercrimson/nikemind002blackhypercrimson2.webp",
+          "/produtos/nikemind002/blackhypercrimson/nikemind002blackhypercrimson3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "lightsmoke",
+        nome: "Light Smoke",
+        preco: 799,
+        imagens: [
+          "/produtos/nikemind002/lightsmoke/nikemind002lightsmoke1.webp",
+          "/produtos/nikemind002/lightsmoke/nikemind002lightsmoke2.webp",
+          "/produtos/nikemind002/lightsmoke/nikemind002lightsmoke3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "sailwhite",
+        nome: "Sail White",
+        preco: 799,
+        imagens: [
+          "/produtos/nikemind002/sailwhite/nikemind002sailwhite1.webp",
+          "/produtos/nikemind002/sailwhite/nikemind002sailwhite2.webp",
+          "/produtos/nikemind002/sailwhite/nikemind002sailwhite3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikesabrina2",
+    nome: "Nike Sabrina 2",
+    thumbnail: "/layout/thumbnails/nikesabrina2.png",
+    descricao:
+      "Leve, responsivo e firme para quem joga com velocidade e controle.",
+    colorways: [
+      {
+        id: "byyou",
+        nome: "By You",
+        preco: 839,
+        imagens: [
+          "/produtos/nikesabrina2/byyou/nikesabrina2byyou1.webp",
+          "/produtos/nikesabrina2/byyou/nikesabrina2byyou2.webp",
+          "/produtos/nikesabrina2/byyou/nikesabrina2byyou3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "midnightnavy",
+        nome: "Midnight Navy",
+        preco: 839,
+        imagens: [
+          "/produtos/nikesabrina2/midnightnavy/nikesabrina2midnightnavy1.webp",
+          "/produtos/nikesabrina2/midnightnavy/nikesabrina2midnightnavy2.webp",
+          "/produtos/nikesabrina2/midnightnavy/nikesabrina2midnightnavy3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "tbp",
+        nome: "TBP",
+        preco: 839,
+        imagens: [
+          "/produtos/nikesabrina2/tbp/nikesabrina2tbp1.webp",
+          "/produtos/nikesabrina2/tbp/nikesabrina2tbp2.webp",
+          "/produtos/nikesabrina2/tbp/nikesabrina2tbp3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "nikesabrina3",
+    nome: "Nike Sabrina 3",
+    thumbnail: "/layout/thumbnails/nikesabrina3.png",
+    descricao:
+      "Suporte, leveza e resposta para cortes rápidos e arremessos em movimento.",
+    colorways: [
+      {
+        id: "allstar",
+        nome: "All Star",
+        preco: 889,
+        imagens: [
+          "/produtos/nikesabrina3/allstar/nikesabrina3allstar1.webp",
+          "/produtos/nikesabrina3/allstar/nikesabrina3allstar2.webp",
+          "/produtos/nikesabrina3/allstar/nikesabrina3allstar3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "claygreen",
+        nome: "Clay Green",
+        preco: 889,
+        imagens: [
+          "/produtos/nikesabrina3/claygreen/nikesabrina3claygreen1.webp",
+          "/produtos/nikesabrina3/claygreen/nikesabrina3claygreen2.webp",
+          "/produtos/nikesabrina3/claygreen/nikesabrina3claygreen3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "gamer",
+        nome: "Gamer",
+        preco: 889,
+        imagens: [
+          "/produtos/nikesabrina3/gamer/nikesabrina3gamer1.webp",
+          "/produtos/nikesabrina3/gamer/nikesabrina3gamer2.webp",
+          "/produtos/nikesabrina3/gamer/nikesabrina3gamer3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "nby",
+        nome: "NBY",
+        preco: 889,
+        imagens: [
+          "/produtos/nikesabrina3/nby/nikesabrina3nby1.webp",
+          "/produtos/nikesabrina3/nby/nikesabrina3nby2.webp",
+          "/produtos/nikesabrina3/nby/nikesabrina3nby3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "pumalamelomb04",
+    nome: "Puma LaMelo MB.04",
+    thumbnail: "/layout/thumbnails/pumalamelomb04.png",
+    descricao:
+      "Visual forte e pegada moderna para quem quer conforto e presença em cada posse.",
+    colorways: [
+      {
+        id: "halloween",
+        nome: "Halloween",
+        preco: 829,
+        imagens: [
+          "/produtos/pumalamelomb04/halloween/pumalamelomb04halloween1.webp",
+          "/produtos/pumalamelomb04/halloween/pumalamelomb04halloween2.webp",
+          "/produtos/pumalamelomb04/halloween/pumalamelomb04halloween3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "1d1",
+        nome: "1D1",
+        preco: 829,
+        imagens: [
+          "/produtos/pumalamelomb04/1d1/pumalamelomb041d11.webp",
+          "/produtos/pumalamelomb04/1d1/pumalamelomb041d12.webp",
+          "/produtos/pumalamelomb04/1d1/pumalamelomb041d13.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+  {
+    slug: "underarmourcurry8",
+    nome: "Under Armour Curry 8",
+    thumbnail: "/layout/thumbnails/underarmourcurry8.png",
+    descricao:
+      "Leveza, encaixe e resposta rápida para quem vive de movimentação, leitura e arremesso.",
+    colorways: [
+      {
+        id: "chinesenewyear",
+        nome: "Chinese New Year",
+        preco: 849,
+        imagens: [
+          "/produtos/underarmourcurry8/chinesenewyear/underarmourcurry8chinesenewyear1.webp",
+          "/produtos/underarmourcurry8/chinesenewyear/underarmourcurry8chinesenewyear2.webp",
+          "/produtos/underarmourcurry8/chinesenewyear/underarmourcurry8chinesenewyear3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "shineflow",
+        nome: "Shine Flow",
+        preco: 849,
+        imagens: [
+          "/produtos/underarmourcurry8/shineflow/underarmourcurry8shineflow1.webp",
+          "/produtos/underarmourcurry8/shineflow/underarmourcurry8shineflow2.webp",
+          "/produtos/underarmourcurry8/shineflow/underarmourcurry8shineflow3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+      {
+        id: "zenflow",
+        nome: "Zen Flow",
+        preco: 849,
+        imagens: [
+          "/produtos/underarmourcurry8/zenflow/underarmourcurry8zenflow1.webp",
+          "/produtos/underarmourcurry8/zenflow/underarmourcurry8zenflow2.webp",
+          "/produtos/underarmourcurry8/zenflow/underarmourcurry8zenflow3.webp",
+        ],
+        tamanhosDisponiveis: todosOsTamanhos,
+      },
+    ],
+  },
+];
