@@ -104,7 +104,7 @@ export default function Home() {
           </div>
 
           <span className="text-sm text-slate-300">
-            {produtosFiltrados.reduce((total, p) => total + p.colorways.length, 0)} opções disponíveis
+            {produtosFiltrados.reduce((total, p) => total + p.colorways.length, 0)} pares disponíveis
           </span>
         </div>
 
@@ -202,9 +202,17 @@ export default function Home() {
                       {produto.colorways.length > 1 ? "s" : ""}
                     </span>
 
-                    <span className="text-2xl font-black text-white">
-                      {formatMoney(menorPreco)}
-                    </span>
+                    <div className="text-right">
+                      <span className="block text-xs text-slate-400 line-through">
+                        {formatMoney(menorPreco)}
+                      </span>
+                      <span className="block text-xl font-black text-white">
+                        {formatMoney(menorPreco * 0.4)}
+                      </span>
+                      <span className="text-xs text-green-400 font-semibold">
+                        60% OFF
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
