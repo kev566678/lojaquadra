@@ -21,13 +21,11 @@ export default function RootLayout({
         {children}
         <FloatingWhatsapp />
 
-        {/* RODAPÉ */}
         <footer className="bg-slate-950 border-t border-slate-800 mt-10">
           <div className="max-w-7xl mx-auto px-4 py-10">
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
 
-              {/* Logo e descrição */}
               <div>
                 <img
                   src="/layout/logo/logo-horizontal.png"
@@ -39,36 +37,18 @@ export default function RootLayout({
                 </p>
               </div>
 
-              {/* Links úteis */}
               <div>
                 <h3 className="text-white font-black text-sm uppercase tracking-widest mb-4">
                   Links úteis
                 </h3>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>
-                    <Link href="/" className="hover:text-yellow-400 transition">
-                      Produtos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/carrinho" className="hover:text-yellow-400 transition">
-                      Carrinho
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/checkout" className="hover:text-yellow-400 transition">
-                      Checkout
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/politica-de-trocas" className="hover:text-yellow-400 transition">
-                      Política de Trocas e Devoluções
-                    </Link>
-                  </li>
+                  <li><Link href="/" className="hover:text-yellow-400 transition">Produtos</Link></li>
+                  <li><Link href="/carrinho" className="hover:text-yellow-400 transition">Carrinho</Link></li>
+                  <li><Link href="/checkout" className="hover:text-yellow-400 transition">Checkout</Link></li>
+                  <li><Link href="/politica-de-trocas" className="hover:text-yellow-400 transition">Política de Trocas e Devoluções</Link></li>
                 </ul>
               </div>
 
-              {/* Contato */}
               <div>
                 <h3 className="text-white font-black text-sm uppercase tracking-widest mb-4">
                   Contato
@@ -85,10 +65,7 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="mailto:contato@quadraking.com.br"
-                      className="hover:text-yellow-400 transition"
-                    >
+                    <a href="mailto:contato@quadraking.com.br" className="hover:text-yellow-400 transition">
                       ✉️ contato@quadraking.com.br
                     </a>
                   </li>
@@ -102,25 +79,21 @@ export default function RootLayout({
                       📸 @quadrakingstore
                     </a>
                   </li>
-                  <li className="text-slate-500">
-                    🕐 Atendimento: Seg–Sáb, 8h–20h
-                  </li>
+                  <li className="text-slate-500">🕐 Atendimento: Seg–Sáb, 8h–20h</li>
                 </ul>
               </div>
 
             </div>
 
-            {/* Selos de confiança */}
             <div className="border-t border-slate-800 pt-6 mb-6">
               <div className="flex flex-wrap gap-4 justify-center text-xs text-slate-500">
-                <span className="flex items-center gap-1">🔒 Site seguro (HTTPS)</span>
-                <span className="flex items-center gap-1">📦 Entrega via Sedex para todo o Brasil</span>
-                <span className="flex items-center gap-1">💰 Pagamento via PIX</span>
-                <span className="flex items-center gap-1">🔄 Trocas em até 7 dias</span>
+                <span>🔒 Site seguro (HTTPS)</span>
+                <span>📦 Entrega via Sedex para todo o Brasil</span>
+                <span>💰 Pagamento via PIX</span>
+                <span>🔄 Trocas em até 7 dias</span>
               </div>
             </div>
 
-            {/* CNPJ e copyright */}
             <div className="border-t border-slate-800 pt-6 text-center text-xs text-slate-600 space-y-1">
               <p>Razão Social: Kataia Industria e Comercio de Calcados LTDA — Nome Fantasia: Ceara Calcados</p>
               <p>CNPJ: 06.847.704/0001-80</p>
