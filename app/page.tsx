@@ -104,41 +104,37 @@ export default function Home() {
           </div>
 
           <span className="text-sm text-slate-300">
-            {produtosFiltrados.reduce((total, p) => total + p.colorways.length, 0)} pares disponíveis
+            {produtosFiltrados.length} modelos
           </span>
         </div>
 
         <div className="mb-8 flex flex-col md:flex-row md:items-center gap-4">
           {/* Busca por nome */}
-          <div
-            className="flex-1 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
-            style={{ backgroundColor: "#0f172a", border: "1px solid #334155" }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#94a3b8" strokeWidth={2} style={{ flexShrink: 0 }}>
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
+          <div className="relative flex-1">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </span>
             <input
               type="text"
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
               placeholder="Buscar tênis ou colorway..."
               style={{
-                backgroundColor: "transparent",
+                backgroundColor: "#0f172a",
                 color: "#f8fafc",
                 WebkitTextFillColor: "#f8fafc",
-                border: "none",
-                outline: "none",
-                width: "100%",
+                border: "1px solid #334155",
               }}
-              className="text-sm placeholder:text-slate-500"
+              className="w-full rounded-xl pl-11 pr-8 py-2 text-sm outline-none focus:border-yellow-400 placeholder:text-slate-500 transition"
             />
             {busca && (
               <button
                 type="button"
                 onClick={() => setBusca("")}
-                className="text-slate-500 hover:text-white text-lg leading-none"
-                style={{ flexShrink: 0 }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white text-lg leading-none"
               >
                 ×
               </button>
@@ -202,17 +198,9 @@ export default function Home() {
                       {produto.colorways.length > 1 ? "s" : ""}
                     </span>
 
-                    <div className="text-right">
-                      <span className="block text-xs text-slate-400 line-through">
-                        {formatMoney(menorPreco)}
-                      </span>
-                      <span className="block text-xl font-black text-white">
-                        {formatMoney(menorPreco * 0.4)}
-                      </span>
-                      <span className="text-xs text-green-400 font-semibold">
-                        60% OFF
-                      </span>
-                    </div>
+                    <span className="text-2xl font-black text-white">
+                      {formatMoney(menorPreco)}
+                    </span>
                   </div>
                 </div>
               </Link>
