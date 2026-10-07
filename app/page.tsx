@@ -1,182 +1,34 @@
-"use client";
-
-import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { produtos, TAMANHOS_EXIBIDOS } from "@/src/data/produtos";
-import { formatMoney } from "@/src/lib/cart";
-
-function embaralhar<T>(lista: T[]) {
-  return [...lista].sort(() => Math.random() - 0.5);
-}
-
-export default function Home() {
-  const [filtroTamanho, setFiltroTamanho] = useState<number | null>(null);
-  const [busca, setBusca] = useState("");
-  const [produtosOrdenados, setProdutosOrdenados] = useState(produtos);
-
-  useEffect(() => {
-    setProdutosOrdenados(embaralhar(produtos));
-  }, []);
-
-  const produtosFiltrados = useMemo(() => {
-    let lista = produtosOrdenados;
-
-    if (busca.trim()) {
-      const termo = busca.trim().toLowerCase();
-      lista = lista.filter((produto) =>
-        produto.nome.toLowerCase().includes(termo) ||
-        produto.colorways.some((colorway) =>
-          colorway.nome.toLowerCase().includes(termo)
-        )
-      );
-    }
-
-    if (filtroTamanho) {
-      lista = lista.filter((produto) =>
-        produto.colorways.some((colorway) =>
-          colorway.tamanhosDisponiveis.includes(filtroTamanho)
-        )
-      );
-    }
-
-    return lista;
-  }, [filtroTamanho, busca, produtosOrdenados]);
-
-  const trocarTamanho = (valor: string) => {
-    setFiltroTamanho(valor ? Number(valor) : null);
-  };
-
-  return (
-    <main className="min-h-screen">
-      <header className="sticky top-0 z-30 bg-black/80 backdrop-blur border-b border-yellow-500/20">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <img
-            src="/layout/logo/logo-horizontal.png"
-            alt="QUADRAKING STORE"
-            className="h-10 w-auto"
-          />
-          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-200">
-            <a href="#produtos" className="hover:text-yellow-400 transition">Produtos</a>
-            <a href="#confianca" className="hover:text-yellow-400 transition">Confiança</a>
-            <Link href="/carrinho" className="hover:text-yellow-400 transition">Carrinho</Link>
-          </nav>
-        </div>
-      </header>
-
-      <section className="max-w-7xl mx-auto px-4 pt-8">
-        <div className="rounded-3xl overflow-hidden border border-yellow-500/20 shadow-2xl bg-slate-950/70">
-          <picture>
-            <source media="(max-width: 767px)" srcSet="/layout/hero/hero-home-mobile.png" />
-            <source media="(min-width: 768px)" srcSet="/layout/hero/hero-home.png" />
-            <img src="/layout/hero/hero-home.png" alt="Banner principal QUADRAKING STORE" className="w-full object-cover" />
-          </picture>
-        </div>
-      </section>
-
-      <section id="produtos" className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <p className="text-yellow-400 text-sm uppercase tracking-[0.25em]">Catálogo</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Modelos em destaque</h2>
-          </div>
-          <span className="text-sm text-slate-300">
-            {produtosFiltrados.reduce((total, p) => total + p.colorways.length, 0)} pares disponíveis
-          </span>
-        </div>
-
-        <div className="mb-8 flex flex-col md:flex-row md:items-center gap-4">
-          <div
-            className="flex-1 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
-            style={{ backgroundColor: "#0f172a", border: "1px solid #334155" }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#94a3b8" strokeWidth={2} style={{ flexShrink: 0 }}>
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <input
-              type="text"
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              placeholder="Buscar tênis ou colorway..."
-              style={{ backgroundColor: "transparent", color: "#f8fafc", WebkitTextFillColor: "#f8fafc", border: "none", outline: "none", width: "100%" }}
-              className="text-sm placeholder:text-slate-500"
-            />
-            {busca && (
-              <button type="button" onClick={() => setBusca("")} className="text-slate-500 hover:text-white text-lg leading-none" style={{ flexShrink: 0 }}>×</button>
-            )}
-          </div>
-
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <p className="text-sm font-semibold text-white whitespace-nowrap">Meu tamanho:</p>
-            <select
-              value={filtroTamanho ?? ""}
-              onChange={(e) => trocarTamanho(e.target.value)}
-              className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 w-32"
-            >
-              <option value="">Todos</option>
-              {TAMANHOS_EXIBIDOS.map((tamanho) => (
-                <option key={tamanho} value={tamanho}>{tamanho}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {produtosFiltrados.map((produto) => {
-            const thumb = produto.thumbnail || produto.colorways[0]?.imagens[0] || "";
-            const menorPreco = Math.min(...produto.colorways.map((c) => c.preco));
-
-            return (
-              <Link
-                key={produto.slug}
-                href={`/produto/${produto.slug}`}
-                className="group relative rounded-3xl border border-slate-700/70 bg-slate-950/80 p-5 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-2xl overflow-hidden"
-              >
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.15),transparent_60%)]" />
-
-                <div className="relative z-10 rounded-2xl bg-slate-900/80 overflow-hidden flex items-center justify-center h-[240px]">
-                  <img
-                    src={thumb}
-                    alt={produto.nome}
-                    className="max-h-[200px] w-auto object-contain transition duration-300 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="relative z-10 mt-5">
-                  <h3 className="text-xl font-black text-white">{produto.nome}</h3>
-                  <p className="text-sm text-slate-300 mt-2 line-clamp-2">{produto.descricao}</p>
-
-                  <div className="mt-4 flex items-center justify-between gap-4">
-                    <span className="text-sm text-yellow-400 font-semibold">
-                      {produto.colorways.length} colorway{produto.colorways.length > 1 ? "s" : ""}
-                    </span>
-                    <div className="text-right">
-                      <span className="block text-xs text-slate-400 line-through">{formatMoney(menorPreco)}</span>
-                      <span className="block text-xl font-black text-white">{formatMoney(menorPreco * 0.4)}</span>
-                      <span className="text-xs text-green-400 font-semibold">60% OFF</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      <section id="confianca" className="max-w-7xl mx-auto px-4 pb-14">
-        <div className="rounded-3xl border border-slate-700/70 bg-slate-950/80 p-6 md:p-8 shadow-lg">
-          <div className="text-center mb-8">
-            <p className="text-yellow-400 text-sm uppercase tracking-[0.25em]">Confiança</p>
-            <h2 className="text-2xl md:text-3xl font-black text-white mt-2">Compra com mais segurança</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 place-items-center">
-            <img src="/layout/confianca/entrega.png" alt="Enviamos para todo o Brasil" className="w-full max-w-[210px]" />
-            <img src="/layout/confianca/atendimento.png" alt="Atendimento rápido" className="w-full max-w-[210px]" />
-            <img src="/layout/confianca/seguranca.png" alt="Compra segura" className="w-full max-w-[210px]" />
-            <img src="/layout/confianca/pix.png" alt="Pagamento via PIX" className="w-full max-w-[210px]" />
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
+const W="https://wa.me/5588981495878?text=Oi%21%20Vim%20pelo%20site%20lojaqp.com.br%20e%20quero%20aproveitar%20a%20promo%C3%A7%C3%A3o.";
+const modelos=[
+["Nike KD 18","/layout/thumbnails/nikekd18.png"],
+["Nike Air Zoom GT Cut 3","/layout/thumbnails/nikeairzoomgtcut3.png"],
+["Nike Kyrie 5","/layout/thumbnails/nikekyrie5spongebob.png"],
+["Nike Ja 3","/layout/thumbnails/nikeja3.png"],
+["Nike Freak 7","/layout/thumbnails/nikefreak7.png"],
+["Nike Sabrina 3","/layout/thumbnails/nikesabrina3.png"],
+["Puma LaMelo MB.04","/layout/thumbnails/pumalamelomb04.png"],
+["Under Armour Curry 8","/layout/thumbnails/underarmourcurry8.png"]
+] as const;
+const relatos=[
+["Chegouuu","Muito obrigado","Ficou muito bom, muito obrigado mesmo"],
+["Chegou meu BB 😍","Simplesmente maravilhoso","Já até indiquei a loja de vocês"],
+["Chegou!","Qualidade impecável","Muito obg pelo atendimento"],
+["Chegou certinho","Muito confortável e lindo!!","Amei ❤️"],
+["Chegou minha lindeza 😍","Mais lindo ainda ao vivo 🥹"],
+["Chegou","Atendimento top","Muito obrigado pela atenção"]
+] as const;
+function CTA({children}:{children:React.ReactNode}){return <a className="cta" href={W} target="_blank" rel="noreferrer">{children}</a>}
+export default function Home(){return <main>
+<div className="top">🔥 ÚLTIMOS DIAS DA PROMOÇÃO 🔥</div>
+<header><div className="wrap nav"><a href="#inicio" className="brand"><img src="/layout/logo/logo.png" alt="logo"/><b>lojaqp.com.br</b></a><nav><a href="#modelos">Modelos</a><a href="#clientes">Clientes</a><a href="#envios">Envios</a><a href="#garantia">Garantia</a><a href="#faq">Dúvidas</a></nav><a className="mini" href={W} target="_blank" rel="noreferrer">WhatsApp</a></div></header>
+<section id="inicio" className="hero"><div className="wrap heroGrid"><div><p className="eyebrow">OFERTA POR TEMPO LIMITADO</p><h1>Últimos dias <span>para garantir o seu par</span></h1><p className="lead">Tênis de basquete e lifestyle. Veja modelos de referência e consulte disponibilidade, cores e tamanhos direto no atendimento.</p><div className="actions"><CTA>💬 Quero aproveitar no WhatsApp</CTA><a className="ghost" href="#modelos">Ver modelos ↓</a></div><div className="prices"><div><small>1 PAR POR</small><strong>R$299</strong></div><div><small>2 PARES POR</small><strong>R$499</strong></div><div><small>FRETE</small><strong>GRÁTIS</strong></div><div><small>CARTÃO</small><strong>12X S/ JUROS</strong></div></div><p className="note">Pix à vista • Parcelamento somente no cartão • Sem Pix parcelado</p></div><div className="heroCard"><img className="roundLogo" src="/layout/logo/logo.png" alt=""/><img className="shoe" src="/layout/thumbnails/nikekd18.png" alt="Tênis em destaque"/><div className="availability"><b>CONSULTE DISPONIBILIDADE</b><span>Modelos, cores e tamanhos são confirmados pelo atendimento.</span></div></div></div></section>
+<section className="trust"><div className="wrap trustGrid"><div>🚚<span><b>Envio pelos Correios</b><small>Todo o Brasil</small></span></div><div>⚡<span><b>Despacho rápido</b><small>Mesmo dia ou dia seguinte</small></span></div><div>🕒<span><b>Prazo médio</b><small>5 dias úteis</small></span></div><div>💳<span><b>Pagamento</b><small>Pix ou até 12x sem juros</small></span></div></div></section>
+<section id="modelos" className="section"><div className="wrap"><div className="heading"><p className="eyebrow">MODELOS DE REFERÊNCIA</p><h2>Escolha o estilo. A gente confirma o que está disponível.</h2><p>Não é catálogo de estoque: são referências para você visualizar estilos. Consulte disponibilidade real pelo WhatsApp.</p></div><div className="products">{modelos.map(([n,i])=><a className="product" href={W} target="_blank" rel="noreferrer" key={n}><div className="pic"><img src={i} alt={n}/></div><div className="pinfo"><b>{n}</b><span>Consultar disponibilidade →</span></div></a>)}</div><div className="center"><CTA>Consultar modelos e tamanhos</CTA></div></div></section>
+<section id="clientes" className="section dark"><div className="wrap"><div className="heading"><p className="eyebrow">PROVA SOCIAL</p><h2>Clientes recebendo e aprovando</h2><p>Mensagens recebidas depois que os pedidos chegaram.</p></div><div className="feedbacks">{relatos.map((r,idx)=><article className="feedback" key={idx}><div className="fhead"><span>✓</span><div><b>Cliente verificado</b><small>Feedback pelo atendimento</small></div></div><div className="chat">{r.map(m=><p key={m}>{m}</p>)}</div></article>)}</div><p className="caption">Os prints reais enviados serão incorporados na etapa de mídia, mantendo a privacidade dos clientes.</p></div></section>
+<section id="envios" className="section"><div className="wrap"><div className="heading"><p className="eyebrow">PEDIDOS EM MOVIMENTO</p><h2>Envios para todo o Brasil</h2><p>O pedido é preparado, conferido e despachado pelos Correios.</p></div><div className="ship"><div><span>📦</span><h3>Pedido preparado</h3><p>Conferência do par, embalagem e separação para postagem.</p></div><div><span>🚚</span><h3>Postagem nos Correios</h3><p>Despachado no mesmo dia ou no dia seguinte, dependendo do horário.</p></div><div><span>🇧🇷</span><h3>Brasil inteiro</h3><p>Frete grátis na promoção e prazo médio informado de 5 dias úteis.</p></div></div><div className="callout"><div><b>FRETE GRÁTIS NA PROMOÇÃO</b><h3>Do atendimento até a postagem sem complicação.</h3><p>Consulte seu tamanho, escolha o modelo disponível e finalize tudo pelo WhatsApp.</p></div><CTA>Quero comprar agora</CTA></div></div></section>
+<section id="garantia" className="section dark"><div className="wrap"><div className="heading"><p className="eyebrow">COMPRA COM TRANQUILIDADE</p><h2>💎 Garantia lojaqp.com.br 💎</h2></div><div className="guarantees"><div><span>🛡️</span><h3>Trocas por defeito</h3><p>Sem custo para o cliente.</p></div><div><span>🔁</span><h3>Trocas por numeração</h3><p>Você paga somente o frete para mandar o produto de volta para a loja. O novo tamanho é reenviado sem custo.</p></div><div><span>💎</span><h3>Reembolso garantido</h3><p>Caso não goste do produto, envie o pedido de volta e o reembolso é processado após o retorno do item.</p></div></div></div></section>
+<section id="faq" className="section"><div className="wrap narrow"><div className="heading"><p className="eyebrow">DÚVIDAS FREQUENTES</p><h2>Tudo que você precisa saber antes de chamar</h2></div><div className="faqs"><details><summary>Como funciona a promoção?</summary><p>1 par por R$299 ou 2 pares por R$499, com frete grátis para todo o Brasil.</p></details><details><summary>Como vejo modelos e tamanhos?</summary><p>Os modelos são referências. Disponibilidade real é confirmada no WhatsApp.</p></details><details><summary>Quais são as formas de pagamento?</summary><p>Pix à vista ou cartão em até 12x sem juros. Pix parcelado não disponível.</p></details><details><summary>Quando o pedido é enviado?</summary><p>Mesmo dia ou dia seguinte, dependendo do horário. Prazo médio: 5 dias úteis.</p></details><details><summary>Como funciona a garantia?</summary><p>Defeito: troca sem custo. Numeração: você paga o frete de volta e o novo tamanho é reenviado sem custo.</p></details></div></div></section>
+<section className="final"><div className="wrap"><p className="eyebrow">ÚLTIMOS DIAS</p><h2>1 par por <span>R$299</span> ou 2 pares por <span>R$499</span></h2><p>Frete grátis • Pix à vista • Cartão em até 12x sem juros</p><CTA>💬 Falar com o atendimento</CTA></div></section>
+<footer><div className="wrap foot"><div className="brand"><img src="/layout/logo/logo.png" alt="logo"/><div><b>lojaqp.com.br</b><small>Tênis de basquete e lifestyle</small></div></div><div className="legal"><p><b>CNPJ:</b> 06.847.704/0001-80</p><p><b>Razão Social:</b> Kataia Industria e Comercio de Calcados LTDA</p><p><b>Nome Fantasia:</b> Ceara Calcados</p><p>Operação 100% online • Atendimento via WhatsApp • Envio pelos Correios</p></div><CTA>WhatsApp</CTA></div></footer>
+<div className="mobile"><a href={W} target="_blank" rel="noreferrer">💬 Falar no WhatsApp</a></div>
+</main>}
